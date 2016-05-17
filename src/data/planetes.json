@@ -1,0 +1,94 @@
+{
+  "Mercure":{
+    "img": "src/image/objets/mercure.svg",
+    "diametre": 4900,
+    "orbitDiametre": 117210000,
+    "revolution": 88,
+    "ajuste": {
+      "diametre": 4,
+      "orbitDiametre": 12
+    }
+  },
+  "Venus":{
+    "img": "src/image/objets/venus.svg",
+    "diametre": 12104,
+    "orbitDiametre": 217790000,
+    "revolution": 225,
+    "ajuste": {
+      "diametre": 6,
+      "orbitDiametre": 20
+    }
+  },
+  "Terre":{
+    "img": "src/image/objets/terre.svg",
+    "diametre": 12756,
+    "orbitDiametre": 300590000,
+    "revolution": 365,
+    "ajuste": {
+      "diametre": 8,
+      "orbitDiametre": 30
+    },
+    "satellites":{
+      "lune": {
+        "img": "src/image/objets/lune.svg",
+        "diametre": 3476,
+        "orbitDiametre": 782756,
+        "revolution": 27,
+        "ajuste": {
+          "diametre": 2,
+          "orbitDiametre": 4
+        }
+      }
+    }
+  },
+  "Mars":{
+    "img": "src/image/objets/mars.svg",
+    "diametre": 6794,
+    "orbitDiametre": 455578000,
+    "revolution": 730,
+    "ajuste": {
+      "diametre": 6,
+      "orbitDiametre": 40
+    }
+  },
+  "Jupiter":{
+    "img": "src/image/objets/jupiter.svg",
+    "diametre": 142984,
+    "orbitDiametre": 1558250000,
+    "revolution": 4380,
+    "ajuste": {
+      "diametre": 12,
+      "orbitDiametre": 60
+    }
+  },
+  "Saturne":{
+    "img": "src/image/objets/saturne.svg",
+    "diametre": 120536,
+    "orbitDiametre": 2860390000,
+    "revolution": 10767.5,
+    "ajuste": {
+      "diametre": 10,
+      "orbitDiametre": 80
+    }
+  },
+  "Uranus":{
+    "img": "src/image/objets/uranus.svg",
+    "diametre": 51100,
+    "orbitDiametre": 5743370000,
+    "revolution": 30660,
+    "ajuste": {
+      "diametre": 8,
+      "orbitDiametre": 110
+    }
+  },
+  "Neptune":{
+    "img": "src/image/objets/neptune.svg",
+    "diametre": 49532,
+    "orbitDiametre": 9009390000,
+    "revolution": 60115.5,
+    "ajuste": {
+      "diametre": 8,
+      "orbitDiametre": 140
+    }
+  }
+}

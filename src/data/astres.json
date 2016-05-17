@@ -1,0 +1,9 @@
+{
+  "Soleil":{
+    "img":"src/image/objets/soleil.svg",
+    "diametre": 1390000,
+    "ajuste": {
+      "diametre": 15
+    }
+  }
+}
