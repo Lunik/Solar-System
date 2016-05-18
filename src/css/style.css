@@ -3,5 +3,9 @@ body{
   background-color: #111
 }
 
+.espace{
+    margin: 0 auto;
+}
+
 .planete{
 }

@@ -1,7 +1,8 @@
 ;(function () {
+  var SIZE = Math.min($(window).height(), $(window).width())
   var svg = d3.select('.espace').append('svg')
-    .attr('width', $(window).width())
-    .attr('height', $(window).height())
+    .attr('width', SIZE)
+    .attr('height', SIZE)
 
   var SystemeSolaire = {
     'selector': $('.espace'),
@@ -10,8 +11,8 @@
     'objets': {}
   }
 
-  SystemeSolaire.selector.width($(window).width())
-  SystemeSolaire.selector.height($(window).height())
+  SystemeSolaire.selector.width(SIZE)
+  SystemeSolaire.selector.height(SIZE)
 
   $.when(
     $.getJSON('src/data/asteroides.json', function (data) {
@@ -85,6 +86,6 @@
   }
 
   function setEchele (distance) {
-    return (Math.min($(window).height(), $(window).width()) * distance) / SystemeSolaire.info.ajuste.diametre
+    return (SIZE * distance) / SystemeSolaire.info.ajuste.diametre
   }
 })()
