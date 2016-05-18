@@ -33,6 +33,8 @@
   ).then(function () {
     appendAstres(SystemeSolaire.objets.astres)
     appendPlanetes(SystemeSolaire.objets.planetes)
+
+    initRotation()
   })
 
   function appendAstres (astres) {
@@ -40,7 +42,7 @@
       SystemeSolaire.svg.append('image')
         .attr('class', 'astre')
         .attr('id', index)
-        .attr('xlink:href', value.img)
+        .attr('href', value.img)
         .attr('width', setEchele(value.ajuste.diametre))
         .attr('height', setEchele(value.ajuste.diametre))
         .attr('x', setEchele(SystemeSolaire.info.ajuste.diametre / 2) - (setEchele(value.ajuste.diametre) / 2))
@@ -59,8 +61,6 @@
         .attr('cx', setEchele(SystemeSolaire.info.ajuste.diametre / 2))
         .attr('cy', setEchele(SystemeSolaire.info.ajuste.diametre / 2))
         .attr('r', setEchele(value.ajuste.orbitDiametre))
-        .style('fill', 'none')
-        .style('stroke', 'rgba(22, 68, 90, 0.75)')
 
       // Append planete
       value.svg.planete = SystemeSolaire.svg.append('image')
@@ -75,14 +75,36 @@
     })
 
     // Rotation
-    setInterval(function () {
+    SystemeSolaire.rotation = function () {
       $.each(planetes, function (index, value) {
         var nextAngle = value.svg.planete.attr('transform').split(',')[0].split('(')[1]
         nextAngle = parseFloat(nextAngle) + 1 * (365 / value.revolution)
         if (nextAngle >= 360) nextAngle = 0
         value.svg.planete.attr('transform', 'rotate(' + nextAngle + ',' + setEchele(SystemeSolaire.info.ajuste.diametre / 2) + ', ' + setEchele(SystemeSolaire.info.ajuste.diametre / 2) + ')')
       })
-    }, 10)
+    }
+  }
+
+  function initRotation(){
+    SystemeSolaire.$pause = $('.controle #pause')
+    SystemeSolaire.$play = $('.controle #play')
+
+    SystemeSolaire.pause = function(){
+      clearInterval(SystemeSolaire.interval)
+      SystemeSolaire.$pause.hide()
+      SystemeSolaire.$play.show()
+    }
+
+    SystemeSolaire.play = function(){
+      SystemeSolaire.interval = setInterval(SystemeSolaire.rotation, 10)
+      SystemeSolaire.$pause.show()
+      SystemeSolaire.$play.hide()
+    }
+
+    SystemeSolaire.$pause.click(SystemeSolaire.pause)
+    SystemeSolaire.$play.click(SystemeSolaire.play)
+
+    SystemeSolaire.play()
   }
 
   function setEchele (distance) {

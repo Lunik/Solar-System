@@ -1,11 +1,47 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css');
+
 body{
   margin: 0px;
-  background-color: #111
+  background-color: #111;
+
+  color: #FFF;
 }
 
+i.fa{
+  width: 100%;
+  height: 100%;
+}
+
+/****************/
+/*      MENU    */
+/****************/
+
+.but{
+  cursor: pointer;
+}
+
+.controle{
+  position: absolute;
+  bottom: 25px;
+
+  width: 100%;
+}
+.controle > .but{
+  margin: 0 auto;
+  width: 25px;
+  height: 25px;
+
+  color: rgba(22, 68, 90, 0.75);
+}
+
+/****************/
+/*    ESPACE    */
+/****************/
 .espace{
     margin: 0 auto;
 }
 
-.planete{
+.espace .orbite{
+  stroke: rgba(22, 68, 90, 0.75);
+  fill: none;
 }
