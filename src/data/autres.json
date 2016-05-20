@@ -1,4 +1,22 @@
 {
-  "Pluton":{},
-  "Ceres":{}
+  "Pluton":{
+    "img": "src/image/objets/pluton.svg",
+    "diametre": 2372,
+    "orbitDiametre": 11801796880,
+    "revolution": 65640.5,
+    "ajuste": {
+      "diametre": 2,
+      "orbitDiametre": 160
+    }
+  },
+  "Ceres":{
+    "img": "src/image/objets/ceres.svg",
+    "diametre": 950,
+    "orbitDiametre": 51596820,
+    "revolution": 1679,
+    "ajuste": {
+      "diametre": 1,
+      "orbitDiametre": 47
+    }
+  }
 }

@@ -31,13 +31,12 @@
       SystemeSolaire.info = data
     })
   ).then(function () {
-    appendAstres(SystemeSolaire.objets.astres)
-    appendPlanetes(SystemeSolaire.objets.planetes)
-
+    appendSoleil(SystemeSolaire.objets.astres)
+    appendAstres($.extend(SystemeSolaire.objets.planetes, SystemeSolaire.objets.autres))
     initRotation()
   })
 
-  function appendAstres (astres) {
+  function appendSoleil (astres) {
     $.each(astres, function (index, value) {
       SystemeSolaire.svg.append('image')
         .attr('class', 'astre')
@@ -50,7 +49,7 @@
     })
   }
 
-  function appendPlanetes (planetes) {
+  function appendAstres (planetes) {
     $.each(planetes, function (index, value) {
       value.svg = {}
 
@@ -71,7 +70,8 @@
         .attr('y', setEchele(SystemeSolaire.info.ajuste.diametre / 2) - (setEchele(value.ajuste.diametre) / 2) - setEchele(value.ajuste.orbitDiametre) / 1.41)
         .attr('width', setEchele(value.ajuste.diametre))
         .attr('height', setEchele(value.ajuste.diametre))
-        .attr('transform', 'rotate(0, ' + setEchele(SystemeSolaire.info.ajuste.diametre / 2) + ', ' + setEchele(SystemeSolaire.info.ajuste.diametre / 2) + ')')
+        .attr('transform', 'rotate('+ Math.floor(Math.random() * (360 - 0)) + ', ' + setEchele(SystemeSolaire.info.ajuste.diametre / 2) + ', ' + setEchele(SystemeSolaire.info.ajuste.diametre / 2) + ')')
+
     })
 
     // Rotation
