@@ -1,1 +1,20 @@
-{}
+{
+  "Ceinture d'Asteroides":{
+    "largeur": 209437019,
+    "orbitDiametre": 463753399,
+    "ajuste": {
+      "largeur": 10,
+      "orbitDiametre": 52,
+      "vitesse": 1
+    }
+  },
+  "Ceinture de Kuiper":{
+    "largeur": 1869973384,
+    "orbitDiametre": 6357909504,
+    "ajuste": {
+      "largeur": 30,
+      "orbitDiametre": 190,
+      "vitesse": 0.1
+    }
+  }
+}
