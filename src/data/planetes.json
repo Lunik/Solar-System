@@ -58,7 +58,7 @@
     "revolution": 4380,
     "ajuste": {
       "diametre": 12,
-      "orbitDiametre": 60
+      "orbitDiametre": 70
     }
   },
   "Saturne":{
@@ -68,7 +68,7 @@
     "revolution": 10767.5,
     "ajuste": {
       "diametre": 10,
-      "orbitDiametre": 80
+      "orbitDiametre": 90
     }
   },
   "Uranus":{
@@ -78,7 +78,7 @@
     "revolution": 30660,
     "ajuste": {
       "diametre": 8,
-      "orbitDiametre": 110
+      "orbitDiametre": 120
     }
   },
   "Neptune":{
@@ -88,7 +88,7 @@
     "revolution": 60115.5,
     "ajuste": {
       "diametre": 8,
-      "orbitDiametre": 140
+      "orbitDiametre": 150
     }
   }
 }
