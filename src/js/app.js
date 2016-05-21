@@ -31,13 +31,13 @@
       SystemeSolaire.info = data
     })
   ).then(function () {
-    appendSoleil(SystemeSolaire.objets.astres)
-    appendAstres($.extend(SystemeSolaire.objets.planetes, SystemeSolaire.objets.autres))
+    appendAstres(SystemeSolaire.objets.astres)
+    appendPlanetes($.extend(SystemeSolaire.objets.planetes, SystemeSolaire.objets.autres))
     initRotation()
     console.log(SystemeSolaire)
   })
 
-  function appendSoleil (astres) {
+  function appendAstres (astres) {
     $.each(astres, function (index, value) {
       value.svg = {}
       value.svg.astre = SystemeSolaire.svg.append('image')
@@ -49,21 +49,12 @@
         .attr('x', setEchele(SystemeSolaire.info.ajuste.diametre / 2) - (setEchele(value.ajuste.diametre) / 2))
         .attr('y', setEchele(SystemeSolaire.info.ajuste.diametre / 2) - (setEchele(value.ajuste.diametre) / 2))
 
-      value.$info = $('<div>')
-        .addClass('info')
-        .attr('id', index)
-        .addClass('but')
-        .append(
-          $('<img>')
-            .attr('src', value.img)
-          , getInfoHtml(index, value)
-            .css('display', 'none')
-      )
-        .appendTo(SystemeSolaire.$info)
+      appendInfo(index, value)
+      value.$info.children('p').show()
     })
   }
 
-  function appendAstres (planetes) {
+  function appendPlanetes (planetes) {
     $.each(planetes, function (index, value) {
       value.svg = {}
 
@@ -86,18 +77,7 @@
         .attr('height', setEchele(value.ajuste.diametre))
         .attr('transform', 'rotate(' + rand(360, 0) + ', ' + setEchele(SystemeSolaire.info.ajuste.diametre / 2) + ', ' + setEchele(SystemeSolaire.info.ajuste.diametre / 2) + ')')
 
-      value.$info = $('<div>')
-        .addClass('info')
-        .attr('id', index)
-        .addClass('but')
-        .append(
-          $('<img>')
-            .attr('src', value.img)
-          , getInfoHtml(index, value)
-            .css('display', 'none')
-      )
-        .appendTo(SystemeSolaire.$info)
-
+      appendInfo(index, value)
     })
 
     // Rotation
@@ -109,6 +89,30 @@
         value.svg.planete.attr('transform', 'rotate(' + nextAngle + ',' + setEchele(SystemeSolaire.info.ajuste.diametre / 2) + ', ' + setEchele(SystemeSolaire.info.ajuste.diametre / 2) + ')')
       })
     }
+  }
+
+  function appendInfo (index, value) {
+    value.$info = $('<div>')
+      .addClass('info')
+      .attr('id', index)
+      .addClass('but')
+      .append(
+        $('<img>')
+          .attr('src', value.img)
+        , getInfoHtml(index, value)
+          .css('display', 'none')
+    )
+      .appendTo(SystemeSolaire.$info)
+
+    value.$info.children('img').hover(function () {
+      var $info = value.$info.children('p')
+      $info.show()
+      $info.addClass('active')
+    }, function () {
+      var $info = value.$info.children('p')
+      $info.hide()
+      $info.removeClass('active')
+    })
   }
 
   function initRotation () {
@@ -141,32 +145,43 @@
     return Math.floor(Math.random() * (a - b) + b)
   }
 
+  function formatNumber(int){
+    var number = int.toString()
+    var string = ""
+    for(var i = number.length-1; i >= 0; i--){
+      string = number[i] + string
+      if((i+1)%3 === 0)
+        string = ' ' +string
+    }
+
+    return string
+  }
+
   function getInfoHtml (nom, objet) {
     var $html = $('<p>').append(
       $('<h1>').text(nom),
       $('<h3>').text('Taille:'),
-      $('<p>').text(objet.diametre + 'km de diamètre'),
+      $('<p>').text(formatNumber(objet.diametre) + ' km de diamètre'),
       $('<h3>').text('Masse:'),
-      $('<p>').html(
-        objet.masse + 'x',
+      $('<p>').append(
+        formatNumber(objet.masse) + 'x',
         $('<span>')
           .addClass('pow')
           .text(objet.massePow),
-        'kg'
+        ' kg'
       ),
       $('<h3>').text('Distance de la Terre:'),
       $('<p>').text(objet.distanceTerre + ' UA'),
-      $('<h3>').text('Révolution:'),
-      $('<p>').text(objet.revolution),
+      objet.revolution ? $('<h3>').text('Révolution:') : '',
+      objet.revolution ? $('<p>').text(formatNumber(objet.revolution)) : '',
       $('<h3>').text('Température:'),
-      $('<p>').text('~ ' + objet.temperature + ' °C'),
+      $('<p>').text('~ ' + formatNumber(objet.temperature) + ' °C'),
       $('<h3>').text('Gravité:'),
-      $('<p>').html(
-        objet.gravite + ' m/s',
+      $('<p>').append(
+        formatNumber(objet.gravite) + ' m/s',
         $('<span>')
           .addClass('pow')
-          .text(2),
-        'kg'
+          .text(2)
       )
     )
     return $html
