@@ -88,7 +88,7 @@
     "gravite": 24.79,
     "ajuste": {
       "diametre": 17,
-      "orbitDiametre": 70
+      "orbitDiametre": 80
     }
   },
   "Saturne":{
@@ -103,7 +103,7 @@
     "gravite": 10.44,
     "ajuste": {
       "diametre": 11,
-      "orbitDiametre": 90
+      "orbitDiametre": 100
     }
   },
   "Uranus":{
@@ -118,7 +118,7 @@
     "gravite": 8.69,
     "ajuste": {
       "diametre": 8,
-      "orbitDiametre": 120
+      "orbitDiametre": 130
     }
   },
   "Neptune":{
@@ -133,7 +133,7 @@
     "gravite": 11.15,
     "ajuste": {
       "diametre": 8,
-      "orbitDiametre": 150
+      "orbitDiametre": 160
     }
   }
 }
