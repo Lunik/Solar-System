@@ -4,6 +4,11 @@
     "diametre": 4900,
     "orbitDiametre": 117210000,
     "revolution": 88,
+    "masse": 328.5,
+    "massePow": 21,
+    "distanceTerre": 0.5,
+    "temperature": 169,
+    "gravite": 3.70,
     "ajuste": {
       "diametre": 4,
       "orbitDiametre": 12
@@ -14,6 +19,11 @@
     "diametre": 12104,
     "orbitDiametre": 217790000,
     "revolution": 225,
+    "masse": 4.87,
+    "massePow": 24,
+    "distanceTerre": 0.3,
+    "temperature": 462,
+    "gravite": 8.87,
     "ajuste": {
       "diametre": 6,
       "orbitDiametre": 20
@@ -24,6 +34,11 @@
     "diametre": 12756,
     "orbitDiametre": 300590000,
     "revolution": 365,
+    "masse": 5.97,
+    "massePow": 24,
+    "distanceTerre": 0,
+    "temperature": 12,
+    "gravite": 9.81,
     "ajuste": {
       "diametre": 8,
       "orbitDiametre": 30
@@ -34,6 +49,11 @@
         "diametre": 3476,
         "orbitDiametre": 782756,
         "revolution": 27,
+        "masse": 7.35,
+        "massePow": 22,
+        "distanceTerre": 0.003,
+        "temperature": -77,
+        "gravite": 1.62,
         "ajuste": {
           "diametre": 2,
           "orbitDiametre": 4
@@ -46,6 +66,11 @@
     "diametre": 6794,
     "orbitDiametre": 455578000,
     "revolution": 730,
+    "masse": 6.39,
+    "massePow": 21,
+    "distanceTerre": 0.4,
+    "temperature": -63,
+    "gravite": 3.71,
     "ajuste": {
       "diametre": 6,
       "orbitDiametre": 40
@@ -56,6 +81,11 @@
     "diametre": 142984,
     "orbitDiametre": 1558250000,
     "revolution": 4380,
+    "masse": 1.9,
+    "massePow": 27,
+    "distanceTerre": 3.9,
+    "temperature": -145,
+    "gravite": 24.79,
     "ajuste": {
       "diametre": 12,
       "orbitDiametre": 70
@@ -66,6 +96,11 @@
     "diametre": 120536,
     "orbitDiametre": 2860390000,
     "revolution": 10767.5,
+    "masse": 568.3,
+    "massePow": 24,
+    "distanceTerre": 8,
+    "temperature": -160,
+    "gravite": 10.44,
     "ajuste": {
       "diametre": 10,
       "orbitDiametre": 90
@@ -76,6 +111,11 @@
     "diametre": 51100,
     "orbitDiametre": 5743370000,
     "revolution": 30660,
+    "masse": 86.81,
+    "massePow": 24,
+    "distanceTerre": 17.4,
+    "temperature": -220,
+    "gravite": 8.69,
     "ajuste": {
       "diametre": 8,
       "orbitDiametre": 120
@@ -86,6 +126,11 @@
     "diametre": 49532,
     "orbitDiametre": 9009390000,
     "revolution": 60115.5,
+    "masse": 102.4,
+    "massePow": 24,
+    "distanceTerre": 29,
+    "temperature": -220,
+    "gravite": 11.15,
     "ajuste": {
       "diametre": 8,
       "orbitDiametre": 150

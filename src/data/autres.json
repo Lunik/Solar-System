@@ -4,19 +4,14 @@
     "diametre": 2372,
     "orbitDiametre": 11801796880,
     "revolution": 65640.5,
+    "masse": 1.314,
+    "massePow": 22,
+    "distanceTerre": 39.5,
+    "temperature": -223,
+    "gravite": 0.62,
     "ajuste": {
       "diametre": 2,
       "orbitDiametre": 170
-    }
-  },
-  "Ceres":{
-    "img": "src/image/objets/ceres.svg",
-    "diametre": 950,
-    "orbitDiametre": 51596820,
-    "revolution": 1679,
-    "ajuste": {
-      "diametre": 1,
-      "orbitDiametre": 47
     }
   }
 }

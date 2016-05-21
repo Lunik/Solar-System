@@ -8,6 +8,7 @@
     'selector': $('.espace'),
     'svg': svg,
     'info': {},
+    '$info': $('.infos'),
     'objets': {},
     'rotation': {},
     'interval': {}
@@ -17,9 +18,6 @@
   SystemeSolaire.selector.height(SIZE)
 
   $.when(
-    $.getJSON('src/data/asteroides.json', function (data) {
-      SystemeSolaire.objets.asteroides = data
-    }),
     $.getJSON('src/data/astres.json', function (data) {
       SystemeSolaire.objets.astres = data
     }),
@@ -35,13 +33,14 @@
   ).then(function () {
     appendSoleil(SystemeSolaire.objets.astres)
     appendAstres($.extend(SystemeSolaire.objets.planetes, SystemeSolaire.objets.autres))
-    appendAsteroides(SystemeSolaire.objets.asteroides)
     initRotation()
+    console.log(SystemeSolaire)
   })
 
   function appendSoleil (astres) {
     $.each(astres, function (index, value) {
-      SystemeSolaire.svg.append('image')
+      value.svg = {}
+      value.svg.astre = SystemeSolaire.svg.append('image')
         .attr('class', 'astre')
         .attr('id', index)
         .attr('href', value.img)
@@ -49,6 +48,18 @@
         .attr('height', setEchele(value.ajuste.diametre))
         .attr('x', setEchele(SystemeSolaire.info.ajuste.diametre / 2) - (setEchele(value.ajuste.diametre) / 2))
         .attr('y', setEchele(SystemeSolaire.info.ajuste.diametre / 2) - (setEchele(value.ajuste.diametre) / 2))
+
+      value.$info = $('<div>')
+        .addClass('info')
+        .attr('id', index)
+        .addClass('but')
+        .append(
+          $('<img>')
+            .attr('src', value.img)
+          , getInfoHtml(index, value)
+            .css('display', 'none')
+      )
+        .appendTo(SystemeSolaire.$info)
     })
   }
 
@@ -73,7 +84,20 @@
         .attr('y', setEchele(SystemeSolaire.info.ajuste.diametre / 2) - (setEchele(value.ajuste.diametre) / 2) - setEchele(value.ajuste.orbitDiametre) / 1.41)
         .attr('width', setEchele(value.ajuste.diametre))
         .attr('height', setEchele(value.ajuste.diametre))
-        .attr('transform', 'rotate('+ Math.floor(Math.random() * (360 - 0)) + ', ' + setEchele(SystemeSolaire.info.ajuste.diametre / 2) + ', ' + setEchele(SystemeSolaire.info.ajuste.diametre / 2) + ')')
+        .attr('transform', 'rotate(' + rand(360, 0) + ', ' + setEchele(SystemeSolaire.info.ajuste.diametre / 2) + ', ' + setEchele(SystemeSolaire.info.ajuste.diametre / 2) + ')')
+
+      value.$info = $('<div>')
+        .addClass('info')
+        .attr('id', index)
+        .addClass('but')
+        .append(
+          $('<img>')
+            .attr('src', value.img)
+          , getInfoHtml(index, value)
+            .css('display', 'none')
+      )
+        .appendTo(SystemeSolaire.$info)
+
     })
 
     // Rotation
@@ -87,45 +111,18 @@
     }
   }
 
-  function appendAsteroides(asteroides){
-    $.each(asteroides, function (index, value) {
-      value.svg = {}
-
-      // Append orbite
-      value.svg.orbite = SystemeSolaire.svg.append('circle')
-        .attr('class', 'asteroides')
-        .attr('id', index)
-        .attr('cx', setEchele(SystemeSolaire.info.ajuste.diametre / 2))
-        .attr('cy', setEchele(SystemeSolaire.info.ajuste.diametre / 2))
-        .attr('r', setEchele(value.ajuste.orbitDiametre))
-        .attr('stroke-width', value.ajuste.largeur)
-        .attr('transform', 'rotate('+ Math.floor(Math.random() * (360 - 0)) + ', ' + setEchele(SystemeSolaire.info.ajuste.diametre / 2) + ', ' + setEchele(SystemeSolaire.info.ajuste.diametre / 2) + ')')
-
-        SystemeSolaire.rotation.asteroides = function(){
-          $.each(asteroides, function (index, value) {
-            var nextAngle = value.svg.orbite.attr('transform').split(',')[0].split('(')[1]
-            nextAngle = parseFloat(nextAngle) + 0.5 * value.ajuste.vitesse
-            if (nextAngle >= 360) nextAngle = 0
-            value.svg.orbite.attr('transform', 'rotate(' + nextAngle + ',' + setEchele(SystemeSolaire.info.ajuste.diametre / 2) + ', ' + setEchele(SystemeSolaire.info.ajuste.diametre / 2) + ')')
-          })
-        }
-      })
-  }
-
-  function initRotation(){
+  function initRotation () {
     SystemeSolaire.$pause = $('.controle #pause')
     SystemeSolaire.$play = $('.controle #play')
 
-    SystemeSolaire.pause = function(){
+    SystemeSolaire.pause = function () {
       clearInterval(SystemeSolaire.interval.planetes)
-      clearInterval(SystemeSolaire.interval.asteroides)
       SystemeSolaire.$pause.hide()
       SystemeSolaire.$play.show()
     }
 
-    SystemeSolaire.play = function(){
+    SystemeSolaire.play = function () {
       SystemeSolaire.interval.planetes = setInterval(SystemeSolaire.rotation.planetes, 10)
-      SystemeSolaire.interval.asteroides = setInterval(SystemeSolaire.rotation.asteroides, 25)
       SystemeSolaire.$pause.show()
       SystemeSolaire.$play.hide()
     }
@@ -138,5 +135,40 @@
 
   function setEchele (distance) {
     return (SIZE * distance) / SystemeSolaire.info.ajuste.diametre
+  }
+
+  function rand (a, b) {
+    return Math.floor(Math.random() * (a - b) + b)
+  }
+
+  function getInfoHtml (nom, objet) {
+    var $html = $('<p>').append(
+      $('<h1>').text(nom),
+      $('<h3>').text('Taille:'),
+      $('<p>').text(objet.diametre + 'km de diamètre'),
+      $('<h3>').text('Masse:'),
+      $('<p>').html(
+        objet.masse + 'x',
+        $('<span>')
+          .addClass('pow')
+          .text(objet.massePow),
+        'kg'
+      ),
+      $('<h3>').text('Distance de la Terre:'),
+      $('<p>').text(objet.distanceTerre + ' UA'),
+      $('<h3>').text('Révolution:'),
+      $('<p>').text(objet.revolution),
+      $('<h3>').text('Température:'),
+      $('<p>').text('~ ' + objet.temperature + ' °C'),
+      $('<h3>').text('Gravité:'),
+      $('<p>').html(
+        objet.gravite + ' m/s',
+        $('<span>')
+          .addClass('pow')
+          .text(2),
+        'kg'
+      )
+    )
+    return $html
   }
 })()

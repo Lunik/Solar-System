@@ -2,6 +2,11 @@
   "Soleil":{
     "img":"src/image/objets/soleil.svg",
     "diametre": 1390000,
+    "masse": 1.989,
+    "massePow": 30,
+    "distanceTerre": 1,
+    "temperature": 15000000,
+    "gravite": 273.95,
     "ajuste": {
       "diametre": 15
     }
