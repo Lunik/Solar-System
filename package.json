@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Lunik/Solar-System/issues"
   },
-  "homepage": "https://github.com/Lunik/Solar-System#readme"
+  "homepage": "https://github.com/Lunik/Solar-System#readme",
+  "devDependencies": {
+    "standard": "^7.1.0"
+  }
 }
