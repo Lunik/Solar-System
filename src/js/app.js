@@ -163,7 +163,7 @@
       $('<p>').text(formatNumber(objet.diametre) + ' km de diamètre'),
       $('<h3>').text('Masse:'),
       $('<p>').append(
-        formatNumber(objet.masse) + 'x',
+        formatNumber(objet.masse) + 'x10',
         $('<span>')
           .addClass('pow')
           .text(objet.massePow),
