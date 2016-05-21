@@ -13,5 +13,20 @@
       "diametre": 2,
       "orbitDiametre": 170
     }
+  },
+  "Ceres":{
+    "img": "src/image/objets/ceres.svg",
+    "diametre": 950,
+    "orbitDiametre": 51596820,
+    "revolution": 1679,
+    "masse": 9.46,
+    "massePow": 20,
+    "distanceTerre": 1.8,
+    "temperature": -167,
+    "gravite": 0.27,
+    "ajuste": {
+      "diametre": 1,
+      "orbitDiametre": 58
+    }
   }
 }
