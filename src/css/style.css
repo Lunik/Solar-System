@@ -72,7 +72,7 @@ text-decoration: underline;
   width: 200px;
 
   top: 5%;
-  right: 100px;
+  right: 50px;
 
   padding: 0px 25px 10px 25px;
 
@@ -94,7 +94,7 @@ text-decoration: underline;
   .infos{
     top: auto;
     bottom: 5%;
-    left: 15%;
+    left: 10%;
   }
 
   .info{
