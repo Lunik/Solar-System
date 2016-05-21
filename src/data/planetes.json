@@ -102,7 +102,7 @@
     "temperature": -160,
     "gravite": 10.44,
     "ajuste": {
-      "diametre": 14,
+      "diametre": 12,
       "orbitDiametre": 100
     }
   },
@@ -117,7 +117,7 @@
     "temperature": -220,
     "gravite": 8.69,
     "ajuste": {
-      "diametre": 11,
+      "diametre": 10,
       "orbitDiametre": 130
     }
   },
@@ -132,7 +132,7 @@
     "temperature": -220,
     "gravite": 11.15,
     "ajuste": {
-      "diametre": 11,
+      "diametre": 10,
       "orbitDiametre": 160
     }
   }
