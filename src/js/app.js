@@ -50,7 +50,6 @@
         .attr('y', setEchele(SystemeSolaire.info.ajuste.diametre / 2) - (setEchele(value.ajuste.diametre) / 2))
 
       appendInfo(index, value)
-      value.$info.children('p').show()
     })
   }
 
