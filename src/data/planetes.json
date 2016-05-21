@@ -11,7 +11,7 @@
     "gravite": 3.70,
     "ajuste": {
       "diametre": 4,
-      "orbitDiametre": 12
+      "orbitDiametre": 18
     }
   },
   "Venus":{
@@ -25,8 +25,8 @@
     "temperature": 462,
     "gravite": 8.87,
     "ajuste": {
-      "diametre": 6,
-      "orbitDiametre": 20
+      "diametre": 7,
+      "orbitDiametre": 28
     }
   },
   "Terre":{
@@ -41,7 +41,7 @@
     "gravite": 9.81,
     "ajuste": {
       "diametre": 8,
-      "orbitDiametre": 30
+      "orbitDiametre": 40
     },
     "satellites":{
       "lune": {
@@ -72,8 +72,8 @@
     "temperature": -63,
     "gravite": 3.71,
     "ajuste": {
-      "diametre": 6,
-      "orbitDiametre": 40
+      "diametre": 5,
+      "orbitDiametre": 50
     }
   },
   "Jupiter":{
@@ -87,7 +87,7 @@
     "temperature": -145,
     "gravite": 24.79,
     "ajuste": {
-      "diametre": 12,
+      "diametre": 15,
       "orbitDiametre": 70
     }
   },
@@ -102,7 +102,7 @@
     "temperature": -160,
     "gravite": 10.44,
     "ajuste": {
-      "diametre": 10,
+      "diametre": 12,
       "orbitDiametre": 90
     }
   },
