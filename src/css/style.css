@@ -3,7 +3,7 @@
 body{
   margin: 0px;
   background-color: #000;
-  background-image: radial-gradient(ellipse at center, #0e2f3d 0%,#07161e 68%);
+  background-image: radial-gradient(ellipse at center, #2B2B2B 0%,#111 68%);
 
   color: #FFF;
 }
@@ -118,7 +118,7 @@ text-decoration: underline;
 }
 
 .espace .orbite{
-  stroke: #16445A;
+  stroke: #646464;
   fill: none;
 }
 
