@@ -37,7 +37,7 @@ span.pow{
   margin: 0 auto;
 
   font-size: 25px;
-  color: #16445A;
+  color: #646464;
 }
 
 /****************/
@@ -76,11 +76,11 @@ text-decoration: underline;
 
   padding: 0px 25px 10px 25px;
 
-  background-color: #16445A;
-  box-shadow: 3px 3px 5px #0B2631;
+  background-color: #646464;
+  box-shadow: 3px 3px 5px #111;
 
   border-radius: 8px;
-  border: 2px solid #0e2f3d;
+  border: 2px solid #323232;
 }
 
 .info > p > p{
