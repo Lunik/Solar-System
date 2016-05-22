@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<g>
+	<defs>
+		<circle id="XMLID_5_" cx="50.177" cy="50.177" r="49.177"/>
+	</defs>
+	<use xlink:href="#XMLID_5_"  overflow="visible" fill="#CAB49F"/>
+	<clipPath id="XMLID_10_">
+		<use xlink:href="#XMLID_5_"  overflow="visible"/>
+	</clipPath>
+	<circle clip-path="url(#XMLID_10_)" fill="#F0D8C0" cx="40.384" cy="64.228" r="49.177"/>
+</g>
+</svg>

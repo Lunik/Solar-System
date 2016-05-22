@@ -1,0 +1,129 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css');
+
+body{
+  margin: 0px;
+  background-color: #000;
+  background-image: radial-gradient(ellipse at center, #2B2B2B 0%,#111 68%);
+
+  color: #FFF;
+}
+
+i.fa{
+  height: 100%;
+}
+
+span.pow{
+  position: relative;
+  bottom: 1ex;
+  font-size: 70%;
+}
+/****************/
+/*      MENU    */
+/****************/
+
+.but > i, .but > img{
+  cursor: pointer;
+}
+
+.controle{
+  position: absolute;
+  top: 25px;
+  left: 25px;
+
+  width: 100%;
+}
+
+.controle > .but{
+  margin: 0 auto;
+
+  font-size: 25px;
+  color: #646464;
+}
+
+/****************/
+/*      INFO    */
+/****************/
+
+.infos{
+  position: absolute;
+  right: 10px;
+  top: 5%;
+}
+
+.info {
+  margin: 10px;
+}
+
+.info img{
+  width: 50px;
+  height: 50px;
+
+  border-radius: 100%;
+  box-shadow: 10px 10px 10px #111;
+}
+
+.info > h1, .info h3{
+text-decoration: underline;
+}
+
+.info > p{
+  position: absolute;
+
+  width: 200px;
+
+  top: 5%;
+  right: 100%;
+
+  padding: 0px 25px 10px 25px;
+
+  background-color: #646464;
+  box-shadow: 3px 3px 5px #111;
+
+  border-radius: 8px;
+  border: 2px solid #323232;
+}
+
+.info > p > p{
+  position: relative;
+
+  margin: 0px;
+  left: 10px;
+}
+
+@media (max-device-width: 600px) {
+  .infos{
+    top: auto;
+    bottom: 5%;
+    left: 10%;
+  }
+
+  .info{
+    display: inline-block;
+  }
+
+  .info > p{
+    top: auto;
+    bottom: 60px;
+    right: auto;
+
+    margin-left: -100px;
+  }
+}
+
+/****************/
+/*    ESPACE    */
+/****************/
+.espace{
+    margin: 0 auto;
+}
+
+.espace .orbite{
+  stroke: #646464;
+  fill: none;
+}
+
+.espace .asteroides{
+  stroke: grey;
+  stroke-dasharray: 10, 2, 12, 12 ,4 ,7 ,20 ,3, 15, 14, 16, 12, 5, 9, 0, 11;
+  fill: none;
+}
