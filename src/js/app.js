@@ -144,13 +144,14 @@
     return Math.floor(Math.random() * (a - b) + b)
   }
 
-  function formatNumber(int){
+  function formatNumber (int) {
     var number = int.toString()
-    var string = ""
-    for(var i = number.length-1; i >= 0; i--){
+    var string = ''
+    for (var i = number.length - 1; i >= 0; i--) {
       string = number[i] + string
-      if((i+1)%3 === 0)
-        string = ' ' +string
+      if ((i + 1) % 3 === 0) {
+        string = ' ' + string
+      }
     }
 
     return string
